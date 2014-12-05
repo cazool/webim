@@ -1,0 +1,162 @@
+JSON格式消息说明(草稿)
+
+login 登入
+get 获取信息
+set 设置
+send 发送信息
+logout 登出
+
+
+在线状态
+
+登陆
+{
+    "login": [
+        {
+            "username":"tsuibin",
+            "token":"skldfjalskjflnfewjkfhjkdsfklsj",
+            "state":"online"
+        }
+    ]
+}
+
+隐身
+{
+    "state":"invisible"
+}
+不在线
+{
+    "state":"offline"
+}
+在线
+{
+    "state":"online"
+}
+
+
+发送消息
+{
+    "message": [
+        {
+            "from":"tsuibin",
+            "to":"deepin",
+            "text":"你好，世界",
+            "attachment":[
+                {
+                    "file":"http://file.xxxx.com/1.rar",
+                    "file":"http://file.xxxx.com/2.zip"
+
+
+                },
+                {
+                    "img":"http://img.xxxx.com/1.jpg",
+                    "img":"http://img.xxxx.com/2.jpg"
+                }
+            ],
+            "time":"2014-7-8 15:31:21"
+
+        }
+
+    ]
+}
+
+历史记录
+{
+    "history":[
+        {
+            "username":"tsuibin",
+            "time":"2014-7-8"
+        }
+    ]
+}
+
+获取好友列表
+{
+    "get":[
+        {"friend":"list"}
+    ]
+}
+
+获取好友信息
+{
+    "get":[
+        {"friendinfo":"tsuibin"}
+    ]
+}
+
+消息提醒设置
+
+设置静音，好友消息提示，所有人提示
+{
+    "set":[
+        {
+            "sound":"off",
+            "tips":"on",
+            "msgtips":"on"
+        }
+    ]
+}
+消息权限设置
+好友，任何人，指定人
+{
+    "set":[
+        {
+            "friendMessage":"allow",
+            "anyone":"allow"
+        }
+    ],
+    "ban":"tsuibin"
+}
+
+群聊天
+{
+    "group":[
+        {
+            "from":"tsuibin",
+            "to":"10000",
+            "text":"大家好，今天晚上加班",
+            "attachment":[
+                {
+                    "file":"http://file.xxxx.com/3.rar",
+                    "file":"http://file.xxxx.com/4.zip"
+
+
+                },
+                {
+                    "img":"http://img.xxxx.com/3.jpg",
+                    "img":"http://img.xxxx.com/4.jpg"
+                }
+            ],
+            "time":"2014-7-8 14:06:21"
+        }
+    ]
+}
+
+群聊天屏蔽
+{
+    "ban":[
+        {
+            "groupId":"10000"
+        }
+    ]
+}
+
+群聊天记录
+{
+    "history":[
+        {
+            "groupId":"10000",
+            "time":"2014-7-8"
+        }
+    ]
+}
+群聊天消息提醒设置
+{
+    "set":[
+        {
+            "groupID":"10000",
+            "tips":"off"
+        }
+    ]
+}
+

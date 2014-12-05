@@ -1,0 +1,37 @@
+<div class="deepin-message-box" ms-controller="deepin-chat">
+  <div class="deepin-message-wrap">
+    <div class="deepin-message-menu">
+      <div>
+        <span>#</span>
+        <span>-</span>
+        <span>x</span>
+      </div>
+    </div>
+    <div class="deepin-message-up">
+      <div class="deepin-message-chat-list">
+        <div ms-repeat="message_list" ms-class-1="deepin-message-chat-send:el.from==chat.myself" ms-class-2="deepin-message-chat-recevie:el.from!=chat.myself" ms-visible="el.who == chat.current_user">
+          <div class='deepin-message-chat-time'>
+            {{el.time|date("MM-dd HH:mm")}}
+          </div>
+          <div class="deepin-message-chat-content">
+            {{el.text}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="deepin-message-down">
+      <div class="deepin-message-toolbar">
+        <span></span>
+        <span></span>
+        <span class="deepin-message-history-bt">历史记录</span>
+      </div>
+      <div class="deepin-message-input-area">
+        <textarea class="deepin-message-sendbox" name="deepin-message-sendbox" cols="30" rows="10" maxlength=200 ms-duplex="message"></textarea>
+      </div>
+      <div class="deepin-message-send-btn">
+        <span class="deepin-message-send-btn-l">还可以输入<span class="deepin-message-left-word">{{chat.left_word}}</span>个字</span>
+        <span class="deepin-message-send-btn-r"><input class="deepin-message-send-bt" type="button" value="发送" ms-click="send" /></span>
+      </div>
+    </div>
+  </div>
+</div>
